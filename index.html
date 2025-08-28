@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Wedding Games</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;500&family=Dancing+Script&display=swap" rel="stylesheet">
+<style>
+/* --- RESET & BODY --- */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #fff;
+  color: #000;
+  line-height: 1.6;
+  padding: 20px;
+}
+
+/* --- LOGO --- */
+.logo-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+.logo-container img {
+  width: clamp(150px, 60vw, 300px); /* min, ideal, max */
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  border: 4px solid #000;
+  object-fit: contain;
+  transition: transform 0.3s;
+}
+
+/* --- MAIN TITLE --- */
+h1 {
+  text-align: center;
+  font-family: 'Dancing Script', cursive;
+  font-size: 3rem;
+  margin-bottom: 40px;
+  color: #000;
+}
+
+/* --- TAB STYLING --- */
+.tab {
+  display: block;
+  width: 100%;
+  background-color: #000;
+  color: #fff;
+  padding: 15px 20px;
+  border: none;
+  text-align: center;
+  font-size: 1.3rem;
+  font-weight: 500;
+  border-radius: 12px;
+  cursor: pointer;
+  margin-bottom: 12px;
+  transition: background-color 0.3s, transform 0.2s;
+}
+.tab:hover { background-color: #222; transform: scale(1.02); }
+
+/* --- TAB CONTENT --- */
+.tab-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.6s ease, padding 0.3s ease;
+  margin-bottom: 25px;
+  border-radius: 12px;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  padding: 0 20px;
+  text-align: center;
+}
+
+/* când tabul e deschis */
+.tab-content.open {
+  padding: 25px 20px;
+  overflow-y: auto; 
+  max-height: 80vh;  
+}
+
+/* pe mobil, scroll intern complet */
+@media (max-width: 768px) {
+  .tab-content.open {
+    max-height: 70vh; 
+  }
+}
+
+/* --- HEADINGS --- */
+h2 { font-family: 'Playfair Display', serif; font-size: 1.7rem; margin-top: 20px; margin-bottom: 15px; }
+h3 { font-family: 'Playfair Display', serif; font-size: 1.3rem; margin-top: 15px; margin-bottom: 10px; }
+
+/* --- TEXT --- */
+p, li {margin-bottom: 10px; font-size: 1rem; }
+ul { padding-left: 20px; text-align: center;list-style-position: inside; }
+
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+  h1 { font-size: 2.2rem; }
+  .tab { font-size: 1.1rem; padding: 12px 16px; }
+  h2 { font-size: 1.4rem; }
+  h3 { font-size: 1.1rem; }
+  ul { padding-left: 15px; }
+}
+</style>
+</head>
+<body>
+
+<div class="logo-container">
+  <img src="M&Ilogo.png" alt="Logo">
+</div>
+
+<h1>Mulțumim că ați venit!</h1>
+<button class="tab">Program Weekend</button>
+<div class="tab-content" id="program">
+  <h2>Sâmbătă</h2>
+  <ul>
+    <li>12:00 - Check-in</li>
+    <li>13:00 – 15:30 Prânz</li>
+    <li>18:00 Sesiune foto</li>
+    <li>19:30 – 21:30 Pregătirea cinei împreună (gulaș + mămăligă, gustări)</li>
+    <li>21:30 Cină</li>
+    <li>22:30 Jocuri partea I
+      <ul>
+        <li>Mr & Mrs Trivia</li>
+        <li>Roulette of Destiny</li>
+        <li>Hearts In / Hearts Out</li>
+        <li>Lovers chess</li>
+      </ul>
+    </li>
+    <li>00:00 Tort</li>
+  </ul>
+
+  <h2>Duminică</h2>
+  <ul>
+    <li>11:00 – 12:00 Mic dejun</li>
+    <li>15:00 – 17:00 Jocuri partea II (dacă vremea permite)
+      <ul>
+        <li>Pong of Forever</li>
+        <li>Happily Ever After Race</li>
+        <li>Pouring Love</li>
+        <li>Balloon Train of Love</li>
+        <li>Telestrații / Activity</li>
+      </ul>
+    </li>
+    <li>Decernarea premiilor</li>
+    <li>17:00 – 20:00 Pregătirea grătarului împreună + Gustări</li>
+    <li>20:00 – 22:00 Cină – Grătar</li>
+    <li>22:00 Party</li>
+  </ul>
+
+  <h2>Luni</h2>
+  <ul>
+    <li>08:00 – 11:00 Mic dejun & bagaje</li>
+    <li>11:00 Check-out</li>
+  </ul>
+</div>
+<button class="tab">Regulament The Wedding Games</button>
+<div class="tab-content" id="regulament">
+  <h2>1. Echipe</h2>
+  <p>Sunt două echipe: <strong>Marlenii</strong> și <strong>Iulienii</strong>. Echipele sunt alese de miri prin extragere la sorți.</p>
+
+  <h2>2. Organizarea jocurilor</h2>
+  <h3>Runda I - Sâmbătă</h3>
+  <ul>
+    <li>Mr & Mrs Trivia</li>
+    <li>Roulette of Destiny</li>
+    <li>Hearts In / Hearts Out</li>
+    <li>Lovers chess</li>
+  </ul>
+
+  <h3>Runda II – Duminică</h3>
+  <ul>
+    <li>Pong of Forever</li>
+    <li>Happily Ever After Race</li>
+    <li>Pouring Love</li>
+    <li>Balloon Train of Love</li>
+  </ul>
+
+  <h2>3. Regulile jocurilor și punctajul</h2>
+  <h3>3.1 Pong of Forever</h3>
+  <p>Fiecare echipă are 10 pahare aranjate în triunghi. Scop: nimerirea mingii de ping pong în paharele echipei adverse.<br>
+  <strong>Câștigător:</strong> echipa care golește toate paharele adverse.<br>
+  <strong>Punctaj:</strong> 5 puncte</p>
+
+  <h3>3.2 Happily Ever After Race</h3>
+  <p>Fiecare echipă alege două grupuri de câte 3 persoane. Persoana din mijloc leagă picioarele cu cele ale celorlalți. La semnal, grupul parcurge traseul și dă ștafeta următoarei grupe.<br>
+  <strong>Câștigător:</strong> prima echipă care termină ambele grupe.<br>
+  <strong>Punctaj:</strong> 5 puncte</p>
+
+  <h3>3.3 Pouring Love</h3>
+  <p>Echipele formează un lanț și mută apa de la primul la ultimul recipient.<br>
+  <strong>Câștigător:</strong> echipa cu mai multă apă în ultimul recipient.<br>
+  <strong>Punctaj:</strong> 5 puncte</p>
+
+  <h3>3.4 Balloon Train of Love</h3>
+  <p>Echipele se așază în șir indian, mirii primii. La semnal, balonul se menține între membri. Dacă cade, echipa reia traseul de la ultimul membru adăugat.<br>
+  <strong>Câștigător:</strong> prima echipă care termină traseul cu toate baloanele.<br>
+  <strong>Punctaj:</strong> 5 puncte</p>
+
+  <h3>3.5 Mr & Mrs Trivia</h3>
+  <p>Organizată de miri; întrebările se extrag dintr-un bol. Echipele răspund pe rând.<br>
+  <strong>Punctaj:</strong> 1 punct pentru fiecare răspuns corect</p>
+
+  <h3>3.6 Roulette of Destiny</h3>
+  <p>O echipă bea câte un shot. Un singur shot conține alcool, restul sunt non-alcoolice. Echipa adversă ghicește cine a băut alcoolul.<br>
+  <strong>Punctaj:</strong> ghicești corect: 2 puncte, greșești: 0 puncte</p>
+
+  <h3>3.7 Hearts IN / Hearts OUT</h3>
+  <p>Membrii se așază în cerc; intră sau ies la semnal. Echipa corectă: 5 puncte, cealaltă: 3 puncte</p>
+
+  <h3>3.8 Lovers chess</h3>
+  <p>Protejează mirii și capturează piese:<br>
+  Pion: 1 pătrat înainte, diagonal capture.<br>
+  Tura: orizontal/vertical, captură 2 puncte.<br>
+  Cal: L-shape, captură 2 puncte.<br>
+  Nebun: diagonal, captură 2 puncte.<br>
+  Regina: turn+nebun, captură 3 puncte.<br>
+  Regele: 1 pătrat orice direcție, captură bonus 3 puncte</p>
+
+  <h3>3.9 Joc de departajare: Love Song Challenge</h3>
+  <p>Mirele/mireasa dau o temă. Echipele cântă un fragment scurt. Echipa cea mai creativă câștigă.</p>
+
+  <h2>4. Desfășurarea premiilor</h2>
+  <p>Se adună toate punctele. Echipa cu cele mai multe câștigă “Echipa Campioană”. Egalitate → Love Song Challenge.</p>
+
+  <h2>5. Reguli generale</h2>
+  <p>Jocurile sunt pentru distracție și voie bună. Atenție la siguranță. Punctele se adună până la final.</p>
+</div>
+<script>
+(function() {
+  const tabs = document.querySelectorAll('.tab');
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      const content = tab.nextElementSibling;
+      content.classList.toggle('open');
+      if(content.classList.contains('open')){
+        content.style.maxHeight = content.scrollHeight + "px";
+      } else {
+        content.style.maxHeight = null;
+      }
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
